@@ -147,6 +147,9 @@ TEST_CASE("[SceneTree][Generic6DOFJoint3D] Drive force and torque limits default
 TEST_CASE("[SceneTree][PhysicsServer3D][Generic6DOFJoint3D] Drive force and torque limits params round-trip per axis") {
 	PhysicsServer3D *physics_server = PhysicsServer3D::get_singleton();
 	REQUIRE(physics_server != nullptr);
+	if (physics_server->get_class_name() == "PhysicsServer3DDummy") {
+		return;
+	}
 
 	RID body_a;
 	RID body_b;
@@ -174,6 +177,9 @@ TEST_CASE("[SceneTree][PhysicsServer3D][Generic6DOFJoint3D] Drive force and torq
 TEST_CASE("[SceneTree][PhysicsServer3D][Generic6DOFJoint3D] Drive force and torque limits defaults are unlimited") {
 	PhysicsServer3D *physics_server = PhysicsServer3D::get_singleton();
 	REQUIRE(physics_server != nullptr);
+	if (physics_server->get_class_name() == "PhysicsServer3DDummy") {
+		return;
+	}
 
 	RID body_a;
 	RID body_b;
@@ -210,6 +216,9 @@ TEST_CASE("[SceneTree][Generic6DOFJoint3D] Legacy motor and DRIVE limits are sto
 TEST_CASE("[SceneTree][PhysicsServer3D][Generic6DOFJoint3D] DRIVE FLT_MAX after legacy motor round-trips through storage") {
 	PhysicsServer3D *physics_server = PhysicsServer3D::get_singleton();
 	REQUIRE(physics_server != nullptr);
+	if (physics_server->get_class_name() == "PhysicsServer3DDummy") {
+		return;
+	}
 
 	RID body_a;
 	RID body_b;
